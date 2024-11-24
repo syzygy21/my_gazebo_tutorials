@@ -1,3 +1,10 @@
+/**
+ * @file robot_states.cpp
+ * @brief Implementation of the robot state classes
+ * @author Navdeep Singh
+ * @date 2024
+ */
+
 #include "walker/robot_states.hpp"
 #include "walker/robot_control.hpp"
 #include <thread>
@@ -12,25 +19,29 @@ void RobotState::publishVelocity(RobotControl* robot, float linearX, float angul
     robot->publishVelocity(msg);
 }
 
-void MovingState::handleAction(RobotControl* robot, 
+void MovingState::handleAction(RobotControl* robot,
                              const std::map<std::string, float>& collisionRegion) {
-    if (collisionRegion.at("front") < DISTANCE_THRESHOLD || 
-        collisionRegion.at("fleft") < DISTANCE_THRESHOLD || 
+    // Check if obstacles are detected in critical regions
+    if (collisionRegion.at("front") < DISTANCE_THRESHOLD ||
+        collisionRegion.at("fleft") < DISTANCE_THRESHOLD ||
         collisionRegion.at("fright") < DISTANCE_THRESHOLD) {
+        // Switch to rotating state if obstacles detected
         robot->setState(std::make_unique<RotatingState>(robot->getRotateDirection()));
     } else {
+        // Continue moving forward if path is clear
         publishVelocity(robot, FORWARD_SPEED, 0.0);
     }
 }
 
-RotatingState::RotatingState(bool clockwise) 
-    : clockwise_(clockwise), 
+RotatingState::RotatingState(bool clockwise)
+    : clockwise_(clockwise),
       isFirstTime_(true),
       rotationStartTime_(0, 0) {
 }
 
-void RotatingState::handleAction(RobotControl* robot, 
+void RotatingState::handleAction(RobotControl* robot,
                                const std::map<std::string, float>& collisionRegion) {
+    // Initialize rotation start time on first execution
     if (isFirstTime_) {
         rotationStartTime_ = robot->getCurrentTime();
         isFirstTime_ = false;
@@ -38,21 +49,21 @@ void RotatingState::handleAction(RobotControl* robot,
 
     auto currentTime = robot->getCurrentTime();
     if ((currentTime - rotationStartTime_).seconds() < ROTATION_DURATION) {
-        // Still rotating
+        // Continue rotation
         float angularZ = clockwise_ ? -ROTATION_SPEED : ROTATION_SPEED;
         publishVelocity(robot, 0.0, angularZ);
         std::this_thread::sleep_for(50ms);
     }
     else {
-        // Rotation completed, decide next state
-        if (collisionRegion.at("front") > DISTANCE_THRESHOLD && 
-            collisionRegion.at("fleft") > DISTANCE_THRESHOLD && 
+        // Check path after rotation
+        if (collisionRegion.at("front") > DISTANCE_THRESHOLD &&
+            collisionRegion.at("fleft") > DISTANCE_THRESHOLD &&
             collisionRegion.at("fright") > DISTANCE_THRESHOLD) {
-            // Path is clear, move forward
-            robot->toggleRotateDirection();  // Prepare for next rotation
+            // Switch to moving state if path is clear
+            robot->toggleRotateDirection();
             robot->setState(std::make_unique<MovingState>());
         } else {
-            // Path still blocked, rotate in opposite direction
+            // Continue rotating in opposite direction if path is blocked
             robot->toggleRotateDirection();
             robot->setState(std::make_unique<RotatingState>(robot->getRotateDirection()));
         }
