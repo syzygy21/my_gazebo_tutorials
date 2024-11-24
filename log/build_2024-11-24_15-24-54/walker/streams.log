@@ -1,0 +1,57 @@
+[0.011s] Invoking command in '/home/navdeep/my_gazebo_tutorials/build/walker': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/navdeep/my_gazebo_tutorials/build/walker -- -j16 -l16
+[0.039s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.126s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.143s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.144s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.148s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.155s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.162s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.196s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[0.212s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.213s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.297s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.322s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.368s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.368s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/navdeep/my_gazebo_tutorials/walker/include>
+[0.368s] -- Configured cppcheck exclude dirs and/or files: 
+[0.368s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.369s] -- Added test 'lint_cmake' to check CMake code style
+[0.369s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.370s] -- Added test 'uncrustify' to check C / C++ code style
+[0.370s] -- Configured uncrustify additional arguments: 
+[0.370s] -- Added test 'xmllint' to check XML markup files
+[0.371s] -- Configuring done
+[0.378s] -- Generating done
+[0.379s] -- Build files have been written to: /home/navdeep/my_gazebo_tutorials/build/walker
+[0.404s] [35m[1mConsolidate compiler generated dependencies of target robot_control[0m
+[0.421s] [ 33%] [32mBuilding CXX object CMakeFiles/robot_control.dir/src/robot_control.cpp.o[0m
+[0.421s] [ 66%] [32mBuilding CXX object CMakeFiles/robot_control.dir/src/robot_states.cpp.o[0m
+[6.481s] [100%] [32m[1mLinking CXX executable robot_control[0m
+[6.745s] [100%] Built target robot_control
+[6.756s] Invoked command in '/home/navdeep/my_gazebo_tutorials/build/walker' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/navdeep/my_gazebo_tutorials/build/walker -- -j16 -l16
+[6.797s] Invoking command in '/home/navdeep/my_gazebo_tutorials/build/walker': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/navdeep/my_gazebo_tutorials/build/walker
+[6.803s] -- Install configuration: ""
+[6.803s] -- Installing: /home/navdeep/my_gazebo_tutorials/install/walker/lib/walker/robot_control
+[6.807s] -- Set runtime path of "/home/navdeep/my_gazebo_tutorials/install/walker/lib/walker/robot_control" to ""
+[6.807s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/include/
+[6.807s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/include//walker
+[6.808s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/include//walker/robot_control.hpp
+[6.808s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/include//walker/robot_states.hpp
+[6.808s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/share/walker/launch
+[6.808s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/share/walker/launch/walker_launch.py
+[6.808s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/share/ament_index/resource_index/package_run_dependencies/walker
+[6.808s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/share/ament_index/resource_index/parent_prefix_path/walker
+[6.808s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/share/walker/environment/ament_prefix_path.sh
+[6.808s] -- Installing: /home/navdeep/my_gazebo_tutorials/install/walker/share/walker/environment/ament_prefix_path.dsv
+[6.808s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/share/walker/environment/path.sh
+[6.808s] -- Installing: /home/navdeep/my_gazebo_tutorials/install/walker/share/walker/environment/path.dsv
+[6.808s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/share/walker/local_setup.bash
+[6.808s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/share/walker/local_setup.sh
+[6.808s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/share/walker/local_setup.zsh
+[6.808s] -- Installing: /home/navdeep/my_gazebo_tutorials/install/walker/share/walker/local_setup.dsv
+[6.808s] -- Installing: /home/navdeep/my_gazebo_tutorials/install/walker/share/walker/package.dsv
+[6.808s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/share/ament_index/resource_index/packages/walker
+[6.808s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/share/walker/cmake/walkerConfig.cmake
+[6.809s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/share/walker/cmake/walkerConfig-version.cmake
+[6.809s] -- Up-to-date: /home/navdeep/my_gazebo_tutorials/install/walker/share/walker/package.xml
+[6.810s] Invoked command in '/home/navdeep/my_gazebo_tutorials/build/walker' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/navdeep/my_gazebo_tutorials/build/walker

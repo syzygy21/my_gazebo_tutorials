@@ -5,6 +5,17 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # Enable compile_commands.json
+execute_process(COMMAND cmake -E create_symlink
+                "${PROJECT_BINARY_DIR}/compile_commands.json"
+                "${PROJECT_SOURCE_DIR}/compile_commands.json")
+
+
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(sensor_msgs REQUIRED)

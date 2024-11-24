@@ -1,0 +1,6 @@
+Invoking command in '/home/navdeep/my_gazebo_tutorials/build/walker': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/navdeep/my_gazebo_tutorials/walker -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_INSTALL_PREFIX=/home/navdeep/my_gazebo_tutorials/install/walker
+Invoked command in '/home/navdeep/my_gazebo_tutorials/build/walker' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/navdeep/my_gazebo_tutorials/walker -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_INSTALL_PREFIX=/home/navdeep/my_gazebo_tutorials/install/walker
+Invoking command in '/home/navdeep/my_gazebo_tutorials/build/walker': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/navdeep/my_gazebo_tutorials/build/walker -- -j16 -l16
+Invoked command in '/home/navdeep/my_gazebo_tutorials/build/walker' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/navdeep/my_gazebo_tutorials/build/walker -- -j16 -l16
+Invoking command in '/home/navdeep/my_gazebo_tutorials/build/walker': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/navdeep/my_gazebo_tutorials/build/walker
+Invoked command in '/home/navdeep/my_gazebo_tutorials/build/walker' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/navdeep/my_gazebo_tutorials/build/walker

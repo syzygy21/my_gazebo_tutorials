@@ -1,0 +1,3 @@
+navdeep@navdeep-Zephyrus-G15-GA503RM-GA503RM:~/my_gazebo_tutorials$ cpplint --filter=-build/c++11,+build/c++17,-build/namespaces,-build/include_order $( find . -name *.cpp | grep -vE -e "^./build/" )
+Done processing ./walker/src/robot_control.cpp
+Done processing ./walker/src/robot_states.cpp
